@@ -1,0 +1,7 @@
+1. Register/ Login
+2. Blog/ Blog detail
+3. Comment/ Reply Comment / Rating
+4. Products: Edit/Delete/Add
+5. Update user info
+6. Home/Product Detail
+7. Cart
