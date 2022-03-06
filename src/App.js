@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import MenuLeft from './components/layout/MenuLeft';
+import MenuLeftAcc from './components/account/MenuLeftAcc';
+import { Outlet, withRouter } from 'react-router-dom';
+import { MyProvider } from './components/MyProvider';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    renderChildrenComponent(props) {
+        if (props.location.pathname.includes('account')) {
+            return (
+                <React.Fragment>
+                    <MenuLeftAcc />
+                    {this.props.children}
+                </React.Fragment>
+            )
+        } else if (props.location.pathname.includes('cart')) {
+            return (
+                <React.Fragment>
+                    {this.props.children}
+                </React.Fragment>
+            )
+        } else {
+            return (
+                <React.Fragment>
+                    <MenuLeft />
+                    {this.props.children}
+                </React.Fragment>
+            )
+        }
+    }
+
+    render() {
+        return (
+            <MyProvider>
+                <div className="App">
+                    <Header />
+                    {/* <Outlet /> */}
+                    <div className='container'>
+                        <div className='row'>
+                            {this.renderChildrenComponent(this.props)}
+                        </div>
+                    </div>
+                    <Footer />
+                </div>
+            </MyProvider>
+        );
+    }
 }
 
-export default App;
+export default withRouter(App);

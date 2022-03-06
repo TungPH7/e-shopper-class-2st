@@ -1,0 +1,11 @@
+1. Lấy dữ liệu từ local render ra  cartQty, danh sách sp
+2. Từ list sp tính totalCart
+
+3. Tăng, giảm, xóa sp
+    - Lắng nghe click trên từng thẻ
+    - Xác định id của thẻ được click
+    - Lặp qua list sp để lấy sp được click
+    - Khởi tạo một product mới và gán value mới vào product mới này
+    - Render lại giao diện với giá trị mới
+    - Thêm/xóa product mới khỏi Obj
+    - Set data local

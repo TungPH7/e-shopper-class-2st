@@ -1,0 +1,47 @@
+<div className="col-sm-8">
+    <div id='add-product'>
+        <h2 className='my-product-label'>Add A New Product</h2>
+        <form>
+            <div className="form-group">
+                <input type="text" name="name" id="" className="form-control" placeholder="Product Name" />
+            </div>
+            <div className="form-group">
+                <input type="text" name="price" id="" className="form-control" placeholder="Product Price" />
+            </div>
+            <div className="form-group">
+                <select className="form-control" name="category" id="">
+                    <option value={0}>a</option>
+                    <option value={1}>b</option>
+                </select>
+            </div>
+            <div className="form-group">
+                <select className="form-control" name="brand" id="">
+                    <option value={0}>a</option>
+                    <option value={1}>b</option>
+                </select>
+            </div>
+            <div className="form-group">
+                <select className="form-control" name="status" id="">
+                    <option value={0}>sale</option>
+                    <option value={1}>new</option>
+                </select>
+            </div>
+            <div className="form-group">
+                <input type="text" name="sale" id="sale-input" className="form-control" placeholder="0" />
+                <span>%</span>
+            </div>
+            <div className="form-group">
+                <input type="text" name="company" id="" className="form-control" placeholder="Company Profile" />
+            </div>
+            <div className="form-group">
+                <input type="file" name="file" multiple id="" className="form-control" placeholder="" />
+            </div>
+            <div className="form-group">
+                <textarea className="form-control" name="detail" placeholder="Detail" id="" rows="1"></textarea>
+            </div>
+            <div className='add-product-btn'>
+                <button type="submit" className="btn btn-primary add-product-btn">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
